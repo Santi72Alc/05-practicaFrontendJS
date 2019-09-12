@@ -1,7 +1,7 @@
 
 // console.log('navbar');
 import { toggle } from './ui.js';
-import { renderShowsDOM } from './shows.js';
+import { renderBeersDOM } from './beers.js';
 // const { toggle: className } = require('./ui.js'); ()
 
 const navbar = document.querySelector('#navbar');
@@ -24,7 +24,7 @@ searchForm.addEventListener('submit', evt => {
   evt.preventDefault();
   if (searchInput.validity.valid) {
     // render shows
-    renderShowsDOM(searchInput.value);
+    renderBeersDOM(searchInput.value);
   }
 });
 

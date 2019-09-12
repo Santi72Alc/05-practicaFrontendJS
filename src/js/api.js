@@ -1,21 +1,33 @@
 
-const API_KEY = 'API KEY';
 
-const api = (API_URL = 'https://api.tvmaze.com/') => {
-  const searchAPIEndpoint = `${API_URL}search/shows?q=`;
-  const showsAPIEndpoint = `${API_URL}shows`;
+const API_URL = 'https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1/';
+const API_KEY = 'BXBGY45-S9D4MN6-KBE1SJE-QYQJYZ1';
+
+
+const api = (apiUrl = API_URL) => {
+  const searchAPIEndpoint = `${apiUrl}search/beers?q=`;
+  const beersAPIEndpoint = `${apiUrl}beers`;
   return {
-    getShows: async text => {
+
+    getBeers: async text => {
       try {
-        const requestUrl = text ? `${searchAPIEndpoint}${text}` : showsAPIEndpoint;
-        const response = await fetch(requestUrl);
+        const requestUrl = text ? `${searchAPIEndpoint}${text}` : beersAPIEndpoint;
+        const response = await fetch(requestUrl, {
+          headers: new Headers({
+            'Content-type': 'application/json; utf-8',
+            'X-API-KEY': API_KEY,
+          })
+        });
+        // console.log(response);
         if (!response.ok) {
-          throw new Error('Error fetching shows');
+          throw new Error('Error fetching beers');
         }
+        // const data = await response.json();
         const data = await response.json();
-        const formatData = data.map(item => {
-          if (item.show) {
-            return item.show;
+        const beers = data.beers;
+        const formatData = beers.map(item => {
+          if (item.beers) {
+            return item.beers;
           }
           return item;
         });
@@ -25,14 +37,15 @@ const api = (API_URL = 'https://api.tvmaze.com/') => {
         throw err;
       }
     },
-    getShowDetail: async id => {
+
+    getBeerDetail: async id => {
       try {
-        const response = await fetch(`${showsAPIEndpoint}/${id}`);
+        const response = await fetch(`${beersAPIEndpoint}/${id}`);
         if (!response.ok) {
-          throw new Error('Error getting a show');
+          throw new Error('Error getting a beer');
         }
-        const show = await response.json();
-        return show;
+        const beer = await response.json();
+        return beer;
       } catch (err) {
         console.error(err);
         throw err;

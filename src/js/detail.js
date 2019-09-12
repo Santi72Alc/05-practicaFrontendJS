@@ -1,19 +1,20 @@
 import api from './api.js';
 
-const { getShowDetail } = api();
+const { getBeerDetail } = api();
 
-const detailTemplate = ({ id, name, image, summary }) => `
+const detailTemplate = ({ beerId, name, image, brewersTips }) => `
   <div class="detail-section">
-    <header id="${id}">
+    <header id="${beerId}">
       <div class="title-section">
         <h1>${name}</h1>
       </div>
       <div class="image-container">
-        <img src="${image ? image.original : '/src/images/defaultImage.png'}" />
+        <img src="${image ? image : '/src/images/default.png'}" />
       </div>
     </header>
     <div class="content">
-      ${summary}
+      <p>${brewersTips}</p>
+      <p><small>since: ${firstBrewered}</small></p>
     </div>
   </div>
 `;
@@ -21,8 +22,8 @@ const detailTemplate = ({ id, name, image, summary }) => `
 const renderDetail = async id => {
   try {
     const selector = document.querySelector('main');
-    const show = await getShowDetail(id);
-    selector.innerHTML = detailTemplate(show);
+    const beer = await getBeerDetail(id);
+    selector.innerHTML = detailTemplate(beer);
   } catch (err) {
     console.error(err);
   }
