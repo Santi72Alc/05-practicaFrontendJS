@@ -1,0 +1,19 @@
+{
+  "name": "class",
+  "version": "1.0.0",
+  "description": "Práctica de Frontend avanzado con JS",
+  "main": "index.js",
+  "scripts": {
+    "server": "http-server . -c-1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Santiago S.R. - Alicante",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
