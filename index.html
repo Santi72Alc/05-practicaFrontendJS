@@ -18,7 +18,12 @@
       <div class="navbar-right-actions">
         <div class="filter-container">
           <form id="search-form" class="filter-input" novalidate>
-            <input data-pattern-mismatch="Input invalid" required placeholder="search your beer" class="input search" type="text">
+            <!-- Text search input -->
+            <input data-pattern-mismatch="Input invalid" 
+              placeholder="search your beer" class="input search" type="text">
+              <!-- Brewed date search input -->
+            <input type="date" name="searchDate" id="searchDate" 
+              class="input search" data-date-split-input="true">
             <button type="submit" class="button search">Search</button>
           </form>
         </div>
@@ -33,6 +38,7 @@
     <!-- main–section -->
     <main>
     </main>
+    <hr>
     <!-- main-section end -->
 
     <!-- comment-form -->
@@ -46,12 +52,34 @@
       <form id="quote-form" class="quote-form" novalidate>
         <div class="quote-input">
           <label for="quote">Quote of this beer</label>
-          <input id="quote" placeholder="Add your quote" class="input primary" type="text">
+          <input id="quote" required placeholder="Add your quote" class="input primary" type="text">
         </div>
         <button type="submit" class="button primary">Add quote</button>
+        <label for="checkSave"></label>
+        <input type="checkbox" name="checkSave" id="checkSave" checked>Use local Storage
       </form>
     </section>
     <!-- comment-form end -->
+
+    <!-- Footer -->
+    <footer class="footer-image" id="footer">
+        <picture>
+            <source
+              media="(max-width: 767px)"
+              sizes="(max-width: 125px) 100vw, 125px"
+              srcset="/src/images/beersBannerMed_yk2un7/beersBannerMed_yk2un7_ar_1_1,c_fill,g_auto__c_scale,w_125.jpg 125w">
+            <source
+              media="(min-width: 768px) and (max-width: 991px)"
+              sizes="(max-width: 208px) 80vw, 166px"
+              srcset="/src/images/beersBannerMed_yk2un7/beersBannerMed_yk2un7_ar_4_3,c_fill,g_auto__c_scale,w_166.jpg 166w">
+            <img
+              sizes="(max-width: 577px) 70vw, 404px"
+              srcset="/src/images/beersBannerMed_yk2un7/beersBannerMed_yk2un7_c_scale,w_404.jpg 404w"
+              src="/src/images/beersBannerMed_yk2un7/beersBannerMed_yk2un7_c_scale,w_404.jpg"
+              alt="footer image">
+            </picture>
+    </footer>
+    <!-- Footer end -->
 
     <!-- loader -->
     <div id="loader" class="loader-container hide">
@@ -59,7 +87,14 @@
     </div>
     <!-- Loader end -->
 
+    <!-- <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>     -->
+    <!-- Moment - Date library -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script> -->
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script type="module" src="/src/js/routes.js"></script>
   </body>
 </html>
+
+
+<!-- Lorem photos -->
+<!-- https://picsum.photos/id/1003/x/y -->

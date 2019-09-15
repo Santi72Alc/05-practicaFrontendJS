@@ -38,5 +38,9 @@ main.home-page {
   grid-column: 3/5;
 }
 .show-section .secondary {
-  grid-row: 2/3;
+  display: inline-flex;
+  align-content: space-around;
+  margin-left: 20px
+  grid-row: 1/3;
+  width: 80%;
 }

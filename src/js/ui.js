@@ -1,4 +1,4 @@
-
+// ui.js
 
 // const data = [1, 2, 3, 4];
 
@@ -16,9 +16,17 @@
 
 const loader = document.querySelector('#loader');
 const detailSection = document.querySelector('#detailSection');
+const footer = document.querySelector('#footer');
 
-export const showQuotesForm = () => detailSection.style.display = 'block';
-export const hideQuotesForm = () => detailSection.style.display = 'none';
+export const showQuotesForm = () => {
+  detailSection.style.display = 'block';
+  footer.style.display = 'none';
+}
+
+export const hideQuotesForm = () => { 
+  detailSection.style.display = 'none';
+  footer.style.display = 'block';
+}
 
 // const displayElement = selector => display => {
 //   const elemento = document.querySelector(elemento);

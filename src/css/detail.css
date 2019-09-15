@@ -40,7 +40,8 @@ main.detail-page {
   margin: 10px 0;
 }
 .detail-section .image-container {
-  width: 100%;
+  width: 150px;
+  height: 210px;
   margin: 0 auto;
 }
 @media (min-width: 992px) {
@@ -55,6 +56,8 @@ main.detail-page {
 @media (min-width: 992px) {
   .detail-section .image-container img {
     border-radius: 25px;
+    width: 150px;
+    height: 200px;
   }
 }
 .detail-section .quotes-list h2 {

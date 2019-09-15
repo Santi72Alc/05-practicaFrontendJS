@@ -9,6 +9,7 @@ const searchIcon = document.querySelector('#navbar-search');
 const closeIcon = document.querySelector('#navbar-close');
 const searchForm = document.querySelector('#search-form');
 const searchInput = document.querySelector('#navbar .input.search');
+const searchDate = document.querySelector('#searchDate');
 
 const handleNavBar = toggle(navbar);
 
@@ -24,7 +25,7 @@ searchForm.addEventListener('submit', evt => {
   evt.preventDefault();
   if (searchInput.validity.valid) {
     // render shows
-    renderBeersDOM(searchInput.value);
+    renderBeersDOM(searchInput.value, searchDate.value);
   }
 });
 

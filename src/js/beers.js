@@ -1,19 +1,19 @@
-
+// beers.js
 import { toggleClass, renderLoader } from './ui.js';
 import api from './api.js';
 
-const templateBeer = ({ principal, beerId, name, image, description }) => `
+const templateBeer = ({ principal, beerId, name, image, brewersTips }) => `
   <a href="/beers/${beerId}">
     <div class="card ${principal ? 'principal' : 'secondary close'}">
       <header class="card-header">
-        <h2>${name} <small>(${beerId})</small></h2>
+        <h2>(Ref. ${beerId}) - ${name}</h2>
       </header>
       <div class="card-content">
         <div class="card-content-image">
           <img src="${image ? image : '/src/images/default.jpg'}">
         </div>
         <div class="card-content-text">
-          <p>${description}</p>
+          <p>${brewersTips}</p>
         </div>
       </div>
     </div>
@@ -46,13 +46,13 @@ const renderBeers = (element, beers) => {
 
 const { getBeers } = api();
 
-const renderBeersDOM = async text => {
+const renderBeersDOM = async (searchText, searchDate) => {
   try {
     renderLoader('hide', 'show');
     const mainSection = document.querySelector('main');
-    console.log('text :', text);
-    const beers = await getBeers(text);
-    console.log('Beers -> ', beers);
+    // Text and date filter
+    const beers = await getBeers(searchText, searchDate);
+    // render beers
     renderBeers(mainSection, beers);
   } catch (err) {
     console.error('Error en renderBeersDOM', err);

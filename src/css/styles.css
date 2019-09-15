@@ -8,6 +8,7 @@
 @import "detail.css";
 @import "mainSection.css";
 @import "navbar.css";
+@import "footer.css";
 
 * {
   font-family: 'Roboto', Verdana;
