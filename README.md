@@ -41,7 +41,7 @@ NOTA: Pulsando <`ctrl`>+<`click izquiero ratón`> sobre la dirección deseada se
 
 ### **DESCRIPCIÓN Y USO DE LA APLICACIÓN**  
 La página es adaptativa, es decir, dependiendo del tamaño del soporte donde se visualice la aplicación se verá ajustando algunas visualizaciones.  
-Nos permite la visualización (con búsqueda y/o filtrado) de las cervezas contenidas en la BD de la API "[dirección de la API]()", así como la introducción de comentarios sobre cada una de ellas.
+Nos permite la visualización (con búsqueda y/o filtrado) de las cervezas contenidas en la BD de la API "[dirección de la API](https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1/beers)", así como la introducción de comentarios sobre cada una de ellas.
 
 **Pantalla principal**  
 
