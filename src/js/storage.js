@@ -1,25 +1,22 @@
 // storage.js
-/* eslint-disable no-undef */
-const lStorage = {
-  setItem: (key, value) => localStorage.setItem(key, value),
-  getItem: key => localStorage.getItem(key),
+
+const KEY = 'beersSearch';
+// Load or Save the search Text and Date filter
+// return object =  { text, dateFilter }
+
+const storage = window.localStorage;
+
+export const loadSearch = () => {
+  return (storage.getItem(KEY) !== null) ? 
+    JSON.parse(storage.getItem(KEY)) : 
+    { text:'', dateFilter:''};
 };
 
-const cookieStorage = {
-  setItem: (key, value) => Cookies.set(key, value),
-  getItem: key => Cookies.get(key) || '',
+export const saveSearch = (text, dateFilter) => {
+  const dataSearch = {text, dateFilter};
+  // if text & dateFilter are empties -> delete it from localStore
+  if (!dataSearch.text && !dataSearch.dateFilter) storage.removeItem(KEY);
+  else storage.setItem(KEY, JSON.stringify(dataSearch));
+  return dataSearch;
 };
 
-const storage = (type = 'lStorage') => {
-  const types = {
-    lStorage,
-    cookieStorage,
-  };
-  if (typeof(Storage) !== 'undefined') {
-    // Se acepta localStorage
-    return types[type];
-  }
-  return types['cookieStorage'];
-};
-
-export default storage;

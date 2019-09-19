@@ -24,6 +24,10 @@
               <!-- Brewed date search input -->
             <input type="date" name="searchDate" id="searchDate" 
               class="input search" data-date-split-input="true">
+            <label>
+              <input type="checkbox" name="checkSave" id="checkSave"
+                class="input search" checked>Save
+            </label>
             <button type="submit" class="button search">Search</button>
           </form>
         </div>
@@ -55,8 +59,6 @@
           <input id="quote" required placeholder="Add your quote" class="input primary" type="text">
         </div>
         <button type="submit" class="button primary">Add quote</button>
-        <label for="checkSave"></label>
-        <input type="checkbox" name="checkSave" id="checkSave" checked>Use local Storage
       </form>
     </section>
     <!-- comment-form end -->
@@ -88,8 +90,6 @@
     <!-- Loader end -->
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>     -->
-    <!-- Moment - Date library -->
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script> -->
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script type="module" src="/src/js/routes.js"></script>
   </body>

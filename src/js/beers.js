@@ -2,7 +2,7 @@
 import { toggleClass, renderLoader } from './ui.js';
 import api from './api.js';
 
-const templateBeer = ({ principal, beerId, name, image, brewersTips }) => `
+const templateBeer = ({ principal, beerId, name, image, description,  brewersTips, firstBrewed }) => `
   <a href="/beers/${beerId}">
     <div class="card ${principal ? 'principal' : 'secondary close'}">
       <header class="card-header">
@@ -13,7 +13,12 @@ const templateBeer = ({ principal, beerId, name, image, brewersTips }) => `
           <img src="${image ? image : '/src/images/default.jpg'}">
         </div>
         <div class="card-content-text">
-          <p>${brewersTips}</p>
+          <p><em>* Description</em><br>
+          ${description}</p>
+          <p>First Brewed: ${firstBrewed}</p>
+          <hr>
+          <p><em>* Brewers tips</em><br>
+          ${brewersTips}</p>
         </div>
       </div>
     </div>

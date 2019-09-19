@@ -11,6 +11,11 @@ const renderQuotes = async id => {
     const quotes = await getQuotes(id);
     const quotesElements = quotes
       .map(quoteTemplate).join('');
+    // let quotesElements = '';
+    // quotes.forEach( quote => {
+    //   console.log(quote);
+    //   quotesElements += quoteTemplate( quote );
+    // });
     quotesList.innerHTML = quotesElements;
   } catch (err) {
     console.error(err);
