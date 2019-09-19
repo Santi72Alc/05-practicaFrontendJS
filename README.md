@@ -6,7 +6,7 @@ Alicante (*Sept. 2019*)
 ---
 ## <center>Práctica sobre Beer's API
 
-La práctica se basa en la consulta, visualización y comentarios sobre la BD de la api de cervezas "_".
+La práctica se basa en la consulta, visualización y comentarios sobre la BD de la api de cervezas "https://web-bootcamp-exercise-beer-api-nijliozdcg.now.sh/api/v1/beers".
 Permite al usuario ver las 10 primeras cervezas de la BD o hacer una determinada búsqueda por texto y/o fecha de primera elaboración de las mismas.
 
 ### **INSTALACIÓN**  
@@ -20,7 +20,7 @@ sudo apt install NPM
 
 <u>***Descarga***</u>  
 ~~~
-git clone [practicaFrontendJSAvanzado](https://...) directorio_instalación
+git clone [practicaFrontendJSAvanzado](https://github.com/Santi72Alc/practicaFrontendJSAvanzado.git) directorio_instalación
 ~~~
 <u>***Instalación de librerías necesarias***</u>  
 ~~~
