@@ -20,7 +20,7 @@ sudo apt install NPM
 
 <u>***Descarga***</u>  
 ~~~
-git clone [practicaFrontendJSAvanzado](https://github.com/Santi72Alc/practicaFrontendJSAvanzado.git) directorio_instalación
+git clone https://github.com/Santi72Alc/practicaFrontendJSAvanzado.git directorio_instalación
 ~~~
 <u>***Instalación de librerías necesarias***</u>  
 ~~~
