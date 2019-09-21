@@ -27,12 +27,15 @@ const templateBeer = ({ principal, beerId, name, image, description,  brewersTip
 
 
 const renderBeers = (element, beers) => {
-  const htmlBeers = beers.slice(0, 10).map((beer, index) => {
-    // if (index < 1) {
-    //   return templateBeer({ ...beer, principal: true });
-    // }
-    return templateBeer({ ...beer, principal: false });
-  }).join('');
+  let htmlBeers;
+  if (beers.length > 0) {
+    htmlBeers = beers.slice(0, 10).map((beer, index) => {
+      // if (index < 1) {
+      //   return templateBeer({ ...beer, principal: true });
+      // }
+      return templateBeer({ ...beer, principal: false });
+    }).join('');
+  } else htmlBeers = `<h2>No beers to show</h2><br>`;
   element.innerHTML = `
     <div class="show-section">
       ${htmlBeers}
@@ -57,6 +60,7 @@ const renderBeersDOM = async (searchText, searchDate) => {
     const mainSection = document.querySelector('main');
     // Text and date filter
     const beers = await getBeers(searchText, searchDate);
+
     // render beers
     renderBeers(mainSection, beers);
   } catch (err) {
