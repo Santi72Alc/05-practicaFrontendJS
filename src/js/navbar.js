@@ -16,10 +16,9 @@ const saveInput = document.querySelector('#checkSave');
 const handleNavBar = toggle(navbar);
 
 // Take the search saved (if there is it!)
-const dataSearch = loadSearch();
-console.log(dataSearch);
-searchInput.value = dataSearch.text;
-searchDate.value = dataSearch.dateFilter;
+const { text, dateFilter } = loadSearch();
+searchInput.value = text;
+searchDate.value = dateFilter;
 searchInput.focus();
 
 

@@ -1,6 +1,7 @@
 // beers.js
 import { toggleClass, renderLoader } from './ui.js';
 import api from './api.js';
+import { showError } from './errors.js';
 
 const templateBeer = ({ principal, beerId, name, image, description,  brewersTips, firstBrewed }) => `
   <a href="/beers/${beerId}">
@@ -35,7 +36,11 @@ const renderBeers = (element, beers) => {
       // }
       return templateBeer({ ...beer, principal: false });
     }).join('');
-  } else htmlBeers = `<h2>No beers to show</h2><br>`;
+  } else htmlBeers = `
+    <div class="card-content-text">
+      <h2>No beers to show</h2>
+    </div>
+    `;
   element.innerHTML = `
     <div class="show-section">
       ${htmlBeers}
@@ -58,13 +63,15 @@ const renderBeersDOM = async (searchText, searchDate) => {
   try {
     renderLoader('hide', 'show');
     const mainSection = document.querySelector('main');
-    // Text and date filter
+    // Text and date filter like params
     const beers = await getBeers(searchText, searchDate);
-
     // render beers
     renderBeers(mainSection, beers);
+
   } catch (err) {
-    console.error('Error en renderBeersDOM', err);
+    // console.error('Error en renderBeersDOM', err);
+    showError(err, 'renderBeersDOM');
+
   } finally {
     renderLoader('show', 'hide');
   }

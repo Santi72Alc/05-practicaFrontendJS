@@ -1,22 +1,22 @@
 
-.footer-image {
+.header-image {
   display: block;
-  margin-top: 10px;
+  width: 100%;
+  margin-top: 90px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 10px;
-  width: 50%;
+  margin-bottom: 0;
 }
 
 /* States */
 
 /*  show the footer's image in details page */
-.footer-image.show {
+.header-image.show {
   display: block;
 }
 
 /*  hide the footer's image in details page */
-.footer-image.hide {
+.header-image.hide {
   display: none;
 }
 

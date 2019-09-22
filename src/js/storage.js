@@ -2,14 +2,12 @@
 
 const KEY = 'beersSearch';
 // Load or Save the search Text and Date filter
-// return object =  { text, dateFilter }
+// load/save a object => { text, dateFilter }
 
 const storage = window.localStorage;
 
 export const loadSearch = () => {
-  return (storage.getItem(KEY) !== null) ? 
-    JSON.parse(storage.getItem(KEY)) : 
-    { text:'', dateFilter:''};
+  return (storage.getItem(KEY) !== null) ? JSON.parse(storage.getItem(KEY)) : { text:'', dateFilter:''};
 };
 
 export const saveSearch = (text, dateFilter) => {

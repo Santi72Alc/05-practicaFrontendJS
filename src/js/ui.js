@@ -16,16 +16,16 @@
 
 const loader = document.querySelector('#loader');
 const detailSection = document.querySelector('#detailSection');
-const footer = document.querySelector('#footer');
+const header = document.querySelector('#header');
 
 export const showQuotesForm = () => {
   detailSection.style.display = 'block';
-  footer.style.display = 'none';
+  header.style.display = 'none';
 }
 
 export const hideQuotesForm = () => { 
   detailSection.style.display = 'none';
-  footer.style.display = 'block';
+  header.style.display = 'block';
 }
 
 // const displayElement = selector => display => {

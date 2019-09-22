@@ -1,5 +1,6 @@
 import api, { API_URL } from './api.js';
 import { quoteTemplate } from './quotesForm.js';
+import { showError } from './errors.js';
 
 // const QUOTES_API = 'https://quotes-api-keepcoding.herokuapp.com/api/v1';
 
@@ -18,7 +19,8 @@ const renderQuotes = async id => {
     // });
     quotesList.innerHTML = quotesElements;
   } catch (err) {
-    console.error(err);
+    // console.error(err);
+    showError(err, 'renderQuotes');
   }
 };
 

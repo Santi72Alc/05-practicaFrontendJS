@@ -1,5 +1,6 @@
 import api from './api.js';
 import { renderQuotes } from './quotes.js';
+import { showError } from './errors.js';
 
 const { getBeerDetail } = api();
 
@@ -32,7 +33,8 @@ const renderDetail = async id => {
     // await renderQuotes(id);
     selector.innerHTML = detailTemplate(beer);
   } catch (err) {
-    console.error(err);
+    // console.error(err);
+    showError(err, 'renderDetail');
   }
 };
 

@@ -38,6 +38,16 @@
       </div>
     </navbar>
     <!-- navbar-end -->
+    <!-- Header -->
+    <header class="header-image" id="header">
+      <picture>
+        <source media="(max-width: 767px)" srcset="/src/images/beersBannerPeq.jpeg">
+        <source media="(max-width: 991px)" srcset="/src/images/beersBannerMed.jpeg">
+        <img src="/src/images/beersBannerGra_opt.jpg" alt="Beers image">
+      </picture>
+    </header>
+    <!-- Header end -->
+
 
     <!-- main–section -->
     <main>
@@ -63,25 +73,7 @@
     </section>
     <!-- comment-form end -->
 
-    <!-- Footer -->
-    <footer class="footer-image" id="footer">
-        <picture>
-            <source
-              media="(max-width: 767px)"
-              sizes="(max-width: 125px) 100vw, 125px"
-              srcset="/src/images/beersBannerMed_yk2un7/beersBannerMed_yk2un7_ar_1_1,c_fill,g_auto__c_scale,w_125.jpg 125w">
-            <source
-              media="(min-width: 768px) and (max-width: 991px)"
-              sizes="(max-width: 208px) 80vw, 166px"
-              srcset="/src/images/beersBannerMed_yk2un7/beersBannerMed_yk2un7_ar_4_3,c_fill,g_auto__c_scale,w_166.jpg 166w">
-            <img
-              sizes="(max-width: 577px) 70vw, 404px"
-              srcset="/src/images/beersBannerMed_yk2un7/beersBannerMed_yk2un7_c_scale,w_404.jpg 404w"
-              src="/src/images/beersBannerMed_yk2un7/beersBannerMed_yk2un7_c_scale,w_404.jpg"
-              alt="footer image">
-            </picture>
-    </footer>
-    <!-- Footer end -->
+    
 
     <!-- loader -->
     <div id="loader" class="loader-container hide">
@@ -90,6 +82,7 @@
     <!-- Loader end -->
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>     -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script type="module" src="/src/js/routes.js"></script>
   </body>

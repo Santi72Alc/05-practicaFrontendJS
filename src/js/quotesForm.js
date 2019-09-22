@@ -1,14 +1,15 @@
 import api, { API_URL } from './api.js';
+import { showError } from './errors.js';
 // const QUOTES_API = 'https://quotes-api-keepcoding.herokuapp.com/api/v1';
 
 const { createQuote } = api(API_URL);
-const localStorage = window.localStorage;
 
 // response -> { quote, date }
 export const quoteTemplate = ({ comment, dateComment }) => {
   const date = new Date(dateComment);
+  console.log('Fecha: ', date.getMonth());
   const day = date.getDate() < 10 ? '0'+date.getDate() : date.getDate();
-  const month = date.getMonth()+1 < 10 ? '0'+date.getMonth()+1 : date.getMonth()+1;
+  const month = date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : (date.getMonth()+1);
   const hour = date.getHours() < 10 ? '0'+date.getHours() : date.getHours();
   const minutes = date.getMinutes() < 10 ? '0'+date.getMinutes() : date.getMinutes();
   const dateString = 
@@ -16,8 +17,8 @@ export const quoteTemplate = ({ comment, dateComment }) => {
   - ${hour}:${minutes}`;
   return `
     <div class="list-item">
-    <p>${comment}</p>
-    <span>${dateString}</span>
+      <p>${comment}</p>
+      <span>${dateString}</span>
     </div>
     `;
 }
@@ -34,15 +35,10 @@ const addQuoteListener = id => {
       if (quotesInput.validity.valid) {
         // const id = window.location.pathname.split('/detail/')[1]
         await createQuote(id, quotesInput.value);
-        // const dateComment = (new Date()).toJSON();
         const commentToShow = {
           comment: quotesInput.value,
-          // dateComment: dateComment,
+          dateComment: new Date(),
         };
-        // if (storageInput.checked) {
-        //   console.log(`Grabado : ${dateComment}`);
-        //   localStorage.setItem(dateComment.slice(0,19), quotesInput.value);
-        // }
         quotesList.innerHTML += quoteTemplate(commentToShow);
 
         // Cleaning the comment input
@@ -59,7 +55,9 @@ const addQuoteListener = id => {
         // pintar(detail))
       }
     } catch (err) {
-      console.error('Eror adding comment', err);
+      err.message = 'Error adding comment';
+      // console.error('Eror adding comment', err);
+      showError(err, 'addQuoteListener');
       // handleError();
     }
   });

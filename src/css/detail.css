@@ -52,7 +52,7 @@ main.detail-page {
 }
 .detail-section .image-container img {
   width: 100%;
-  height: auto;
+  height: inherit;
 }
 @media (min-width: 992px) {
   .detail-section .image-container img {
