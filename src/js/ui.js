@@ -19,7 +19,7 @@ const detailSection = document.querySelector('#detailSection');
 const header = document.querySelector('#header');
 
 export const showQuotesForm = () => {
-  detailSection.style.display = `
+  detailSection.innerHTML = `
     <div id="detail" class="detail-content"></div>
     <div class="quotes-list">
       <h2>Quotes</h2>
@@ -37,7 +37,7 @@ export const showQuotesForm = () => {
 }
 
 export const hideQuotesForm = () => { 
-  detailSection.style.display = '';
+  detailSection.innerHTML = '';
 }
 
 // const displayElement = selector => display => {
