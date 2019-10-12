@@ -19,13 +19,25 @@ const detailSection = document.querySelector('#detailSection');
 const header = document.querySelector('#header');
 
 export const showQuotesForm = () => {
-  detailSection.style.display = 'block';
-  header.style.display = 'none';
+  detailSection.style.display = `
+    <div id="detail" class="detail-content"></div>
+    <div class="quotes-list">
+      <h2>Quotes</h2>
+      <div id="quoteList">
+      </div>
+    </div>
+    <form id="quote-form" class="quote-form" novalidate>
+      <div class="quote-input">
+        <label for="quote">Quote of this beer</label>
+        <input id="quote" required placeholder="Add your quote" class="input primary" type="text">
+      </div>
+      <button type="submit" class="button primary">Add quote</button>
+    </form>
+  `;
 }
 
 export const hideQuotesForm = () => { 
-  detailSection.style.display = 'none';
-  header.style.display = 'block';
+  detailSection.style.display = '';
 }
 
 // const displayElement = selector => display => {
